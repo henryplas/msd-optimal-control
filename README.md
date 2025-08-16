@@ -1,5 +1,5 @@
 # msd-optimal-control
-
+![MSD](outputs/position_vs_time.png)
 A minimal, well-documented Python project that demonstrates **optimal control** on a classic **mass–spring–damper (MSD)** system.  
 You'll get:
 
