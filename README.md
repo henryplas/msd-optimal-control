@@ -49,7 +49,7 @@ If `scipy.linalg.expm` is present, we use the exact ZOH formulas; otherwise we f
 
 We solve the discrete-time **Linear Quadratic Regulator** problem:
 
-![MSD](outputs/equation.png)
+![eq](outputs/equation.PNG)
 
 
 - **Infinite-horizon LQR** uses a fixed point of the Discrete Algebraic Riccati Equation (DARE). We implement a simple fixed-point iteration (no external control libraries).
