@@ -56,8 +56,14 @@ If `scipy.linalg.expm` is present, we use the exact ZOH formulas; otherwise we f
 
 We solve the discrete-time **Linear Quadratic Regulator** problem:
 
-![eq](outputs/equation.PNG)
-
+$$
+\begin{aligned}
+\min_{\{u_k\}}\quad
+& \sum_{k=0}^{N-1} \big( x_k^\top Q x_k + u_k^\top R u_k \big) + x_N^\top Q_f x_N \\
+\text{s.t.}\quad
+& x_{k+1} = A_d x_k + B_d u_k .
+\end{aligned}
+$$
 
 - **Infinite-horizon LQR** uses a fixed point of the Discrete Algebraic Riccati Equation (DARE). We implement a simple fixed-point iteration (no external control libraries).
 - **Finite-horizon LQR** computes a time-varying gain sequence by backward Riccati recursion.
