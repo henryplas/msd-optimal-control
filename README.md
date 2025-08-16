@@ -32,13 +32,20 @@ The demo will print the total quadratic cost and pop up two plots: states and co
 
 ## The Model
 
-State: \(x = [p, \; v]^\top\) (position and velocity)  
-Dynamics (continuous):  
-\[
-\dot{x} = A x + B u,\quad
-A = \begin{bmatrix}0 & 1\\ -k/m & -c/m\end{bmatrix},\;
-B = \begin{bmatrix}0\\ 1/m\end{bmatrix}.
-\]
+**State (position and velocity):**
+
+$$
+x = \begin{bmatrix} p \\ v \end{bmatrix}, \qquad
+p=\text{position},\; v=\text{velocity}.
+$$
+
+**Dynamics (continuous time):**
+
+$$
+\dot{x} = A x + B u, \qquad
+A = \begin{bmatrix} 0 & 1 \\ -\frac{k}{m} & -\frac{c}{m} \end{bmatrix}, \quad
+B = \begin{bmatrix} 0 \\ \frac{1}{m} \end{bmatrix}.
+$$
 
 We simulate a **discrete-time** model \(x_{k+1} = A_d x_k + B_d u_k\) using Zero-Order Hold (ZOH).
 If `scipy.linalg.expm` is present, we use the exact ZOH formulas; otherwise we fall back to forward Euler (good for small \(\Delta t\)).
